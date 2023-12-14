@@ -40,9 +40,8 @@ export const ImageGallery = () => {
             });
         setImages(prev => [...prev, ...hits]);
         // setTotalHits(totalHits);
-      } catch (error) {
-        // setError(error.message);
-        console.log(error);
+      } catch (err) {
+        setError(err.message);
       } finally {
         setIsLoading(false);
       }
@@ -73,7 +72,7 @@ export const ImageGallery = () => {
   //   };
   // }, [q]);
 
-  //   async componentDidUpdate(_, prevState) {
+  //   async componentDidUpdate(_, prevState) {mm
   //   // const { per_page } = this.state;
   //   if (prevState.q === this.state.q && prevState.page !== this.state.page) {
   //     try {
@@ -147,6 +146,7 @@ export const ImageGallery = () => {
   return (
     <div>
       {modal && <Modal url={url} close={closeModal} />}
+      {error && <h1>{error}</h1>}
       <Searchbar onSubmit={handleSearchText} />
       {isLoading && <Loader />}
       <ul className={s.ImageGallery}>
