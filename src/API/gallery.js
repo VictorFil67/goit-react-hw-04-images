@@ -11,7 +11,7 @@ export const getImages = async configParams => {
   const { data } = await api(`&image_type=photo&orientation=horizontal`, {
     params: {
       q: 'cat',
-      // per_page: 10,
+      per_page: 12,
       // page: 1,
       ...configParams,
     },
