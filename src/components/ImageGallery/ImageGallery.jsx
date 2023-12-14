@@ -117,7 +117,7 @@ export const ImageGallery = () => {
     // this.setState({ q: text, images: [], page: 1 });
     setQ(text);
     setImages([]);
-    // setPage(1);
+    setPage(1);
   };
 
   const handleLoadMore = e => {
